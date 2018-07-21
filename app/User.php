@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,10 +29,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function roles()
+    public function roles() : BelongsToMany
     {
         return $this->belongsToMany(UserRole::class, 'role_user', 'user_id', 'role_id');
     }

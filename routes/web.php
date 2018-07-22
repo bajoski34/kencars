@@ -18,3 +18,19 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Administration routes
+Route::prefix('admin')->middleware('admin')->group(function () {
+
+    Route::get('/', 'Administration\DashboardController@index');
+    Route::get('/users', 'Administration\UsersController@index');
+    Route::get('/vehicles', 'Administration\VehiclesController@index');
+
+    // Vue routes
+    Route::prefix('/vue')->group(function () {
+
+        Route::prefix('/users')->middleware('can:access-users')->group(function () {
+            Route::get('/', 'Administration\UsersController@list');
+        });
+    });
+});

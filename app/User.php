@@ -33,4 +33,40 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(UserRole::class, 'role_user', 'user_id', 'role_id');
     }
+
+    /**
+     * @param $roles
+     * @return bool
+     */
+    public function isAuthorizedForRoles($roles) : bool
+    {
+        if (is_array($roles)) {
+            return $this->hasRoleIn($roles);
+        }
+
+        return $this->hasRole($roles);
+    }
+
+    /**
+     * Checks if the give role is assigned to this user.
+     *
+     * @param string $role
+     * @return bool
+     */
+    public function hasRole(string $role) : bool
+    {
+        return ! is_null($this->roles()->where('title', $role)->first());
+    }
+
+    /**
+     * Checks if this user has assigned at least one of the given roles.
+     *
+     * @param array $roles
+     * @return bool
+     */
+    public function hasRoleIn(array $roles) : bool
+    {
+        return ! is_null($this->roles()->whereIn('title', $roles)->first());
+    }
+
 }

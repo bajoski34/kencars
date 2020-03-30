@@ -6,13 +6,20 @@
             <div class="col-md-2">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="">Dashboard</a>
+                    <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="">Users</a>
+                        <a href="">Transactions</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="">Vehicles</a>
+                        <a href="{{ route('admin.vehicles') }}">Vehicles</a>
+                    </li>
+                   
+                    <li class="list-group-item">
+                        <a href="{{ route('admin.vehicles') }}">Requests</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="{{ route('admin.vehicles') }}">Renevue</a>
                     </li>
                 </ul>
             </div>
@@ -21,5 +28,14 @@
                 @yield('admin_content')
             </div>
         </div>
+        </div>
+    <div class="row">
+        
+
     </div>
 @endsection
+
+@section('main-page')
+
+@endsection
+

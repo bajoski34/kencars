@@ -17,6 +17,7 @@ class CreateTableVehicles extends Migration
             $table->increments('id');
             $table->text('title');
             $table->text('description');
+            $table->enum('color',['Black','Blue','Red','Green','Silver', 'Gold','Ash','Lilac']);
 
             // relation vehicle -> brand
             $table->integer('brand_id')->unsigned();

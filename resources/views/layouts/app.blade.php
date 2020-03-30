@@ -21,7 +21,24 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
+    @if(!empty($_SESSION))
     <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">KenCar Admin Portal</h5>
+                      <p class="card-text">Support for customers and staff</p>
+                      <a href="#" class="btn btn-primary">Recent Transactions</a>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            @endif
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -73,6 +90,7 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('main-page')
         </main>
     </div>
 </body>

@@ -10,8 +10,14 @@ use App\Http\Controllers\Controller;
 class UsersController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+
+        $data = $request->session()->put('location', 'Lekki-Ajah');
+        //$users = DB::table('users')->get();
+
+        //return view('user.index', ['users' => $users]);
+        return $data;
 
     }
 

@@ -213,8 +213,7 @@
                         <div class=footer-nav>
                             <h3 class=widget-title>Kencars</h3>
                             <ul>
-                                <li><a href=01-home-v1.html title>Home</a></li>
-                                <li><a href=# title>Privacy</a></li>
+            
                             </ul>
                         </div>
                         <div class=footer-nav>
@@ -226,7 +225,6 @@
                         <div class=footer-nav>
                             <h3 class=widget-title>Support</h3>
                             <ul>
-                                <li><a href=# title>Contact Us</a></li>
                                 <li><a href=10-faq.html title>FAQ</a></li>
                             </ul>
                         </div>

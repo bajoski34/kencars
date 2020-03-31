@@ -8,7 +8,7 @@
         <link rel=stylesheet href={{asset('css/jquery-ui.css')}} type=text/css media=all />
         <link rel=stylesheet href={{asset('css/home.css')}} type=text/css media=all />
 
-        <title>Renty - Car Rental</title>
+        <title>Kencar Tours </title>
 
         <!-- Fonts -->
         {{-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}

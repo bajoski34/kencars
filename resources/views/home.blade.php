@@ -133,15 +133,15 @@
                             <div class="form-block location">Location</div>
                             <div class="form-block airport_codes"></div> <input
                                 class=location type=text value placeholder="Enter your location"
-                                name="location" />
+                                name="location" required/>
                         </div>
                         <div class="form-block pick-up">
-                            <h4>Desired Date</h4> <input class=datepicker type=date value name="date_from" /> 
+                            <h4>Desired Date</h4> <input class=datepicker type=date value name="date_from" required/> 
                             <div class=clear></div>
                         </div>
                         <div class="form-block drop-off">
-                            <h4>Choose time range </h4> <input class=time-select type=time size=5 value name="time_from" /> <input
-                                class=time-select type=time size=5 value name="time_to" />
+                            <h4>Choose time range </h4> <input class=time-select type=time size=5 value name="time_from" required/> <input
+                                class=time-select type=time size=5 value name="time_to" required/>
                             <div class=clear></div>
                         </div>
                         <div class="form-block car-type">

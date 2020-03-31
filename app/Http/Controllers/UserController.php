@@ -37,18 +37,20 @@ class UserController extends Controller
          $vehicles = DB::table('vehicles')->where('category_id', $sess_data['select_cartype'] )->limit(1)->get();
         //get the price of a the car type
          $prices = DB::table('price_range')->where('category_id', $sess_data['select_cartype'] )->limit(1)->get();
-        $intervals = DB::table('rent_time')->get();
+         $intervals = DB::table('rent_time')->pluck('rent_time');
 
-        if(isset($sess_data['select_cartype'])){
-            
-           foreach ($prices as $key => $value) {
-               foreach ($interval as $time => $value) {
-                        $total_Cost = $prices * $intervals;
-               }
-           }    
-        }
-
+        print_r($sess_data);
+        //print_r($intervals)."<br /><br />";
         
+
+       
+
+        // if(isset($sess_data['select_cartype'])){
+            
+        //     foreach ($intervals as &$value) {
+        //         $value = $value * 2;
+        //     } 
+        // }
 
          $price_vehiclecat =  DB::table('vehicle_categories')
          ->join('price_range', 'vehicle_categories.id', '=', 'price_range.category_id')

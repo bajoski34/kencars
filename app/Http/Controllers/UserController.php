@@ -52,12 +52,12 @@ class UserController extends Controller
         //     } 
         // }
 
-         $price_vehiclecat =  DB::table('vehicle_categories')
-         ->join('price_range', 'vehicle_categories.id', '=', 'price_range.category_id')
-         ->join('vehicles', 'vehicle_categories.id', '=', 'vehicles.category_id')
-         ->select('vehicle_categories.id', 'price_range.amount', 'vehicles.name')
-         ->get();
-        print_r($price_vehiclecat);
+         //$price_vehiclecat =  DB::table('vehicle_categories')
+         //->join('price_range', 'vehicle_categories.id', '=', 'price_range.category_id')
+         //->join('vehicles', 'vehicle_categories.id', '=', 'vehicles.category_id')
+         //->select('vehicle_categories.id', 'price_range.amount', 'vehicles.name')
+         //->get();
+        //print_r($price_vehiclecat);
 
         $data = $sess_data;
         return view('choose-car', ['data'=> $data,'categories'=> $categories, 'vehicles' => $vehicles, 'price' => $price]);
